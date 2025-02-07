@@ -16,7 +16,7 @@ import Footer from './components/footer';
 function App() {
   return (
     <Provider store={store}>
-      <Router>
+      
         
        
         <div className="flex min-h-screen bg-gray-100">
@@ -40,7 +40,7 @@ function App() {
           </div>
         </div>
           <Footer/>
-      </Router>
+      
     </Provider>
   );
 }
