@@ -17,12 +17,7 @@ const ResultsList: React.FC = () => {
               Fontys University of Applied Sciences (4 results, no new)
             </Link>
           </div>
-          
-          <div>
-            <Link to="/results/fontys/29VPI20" className="text-blue-500 hover:underline cursor-pointer block pl-4">
-              Programme 29VPI20: Propaedeutic Phase (Programme requirements are not met yet, 0 / 60 ECTS)
-            </Link>
-          </div>
+
         </div>
       </div>
     </div>

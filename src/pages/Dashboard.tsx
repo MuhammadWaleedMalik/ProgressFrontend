@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../store/store';
 import './Dashboard.css';
 
-import { IoIosArrowForward } from "react-icons/io";
 
 
 const Dashboard: React.FC = () => {
@@ -18,17 +17,7 @@ const Dashboard: React.FC = () => {
         <p className="text-gray-600">Welcome at FH ICT website for study results and enrolments</p>
       </div>
 
-      <div  id='dashboard-box2'>
-        <h2 className="text-lg  text-[#827f77] font-semibold mb-4">Propaedeutic Phase</h2>
-     
-        <div id='dashboard-input'>
-
-            <input type="text" />
-            <p className="text-right">0 / 60 ECTS</p>
-
-            <p className='text-right text-blue-500' >  View</p>
-        </div>
-      </div>
+      
     </div>
   );
 };

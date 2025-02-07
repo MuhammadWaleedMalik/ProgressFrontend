@@ -11,7 +11,7 @@ const Header: React.FC = () => {
   const dispatch = useDispatch();
 
   return (
-    <header className="bg-[#00A1C9] shadow-sm px-6 py-4 flex justify-between items-center">
+    <header className="bg-[#00A1C9] shadow-sm px-6 py-1 flex justify-between items-center">
       
       <button 
         className="p-2 hover:bg-[#0091B4] rounded-lg text-white"

@@ -1,10 +1,10 @@
 
 #enroll-box {
-
+background-color: white;
     width: 70%;
     height: 70%;
     border-radius: 3px;
-    border: 1px solid rgb(194, 193, 193);
+    border: 1px solid rgba(194, 193, 193, 0.527);
 }
 
 
@@ -23,7 +23,7 @@
 
 #enroll-box-above button  { 
     background-color: #00B0DD;
-    color: white;
+    color: rgb(255, 255, 255);
     width: 87px;
     padding-left: 6px;
     padding-top: 2px;

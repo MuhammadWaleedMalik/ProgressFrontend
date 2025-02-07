@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
-import { Printer } from 'lucide-react';
 
 const ResultsOverview: React.FC = () => {
   const user = useSelector((state: RootState) => state.user);
@@ -29,58 +28,52 @@ const ResultsOverview: React.FC = () => {
                 <th className="px-4 py-2 text-left">TITLE</th>
                 <th className="px-4 py-2 text-left">SCORE</th>
                 <th className="px-4 py-2 text-left">DATE</th>
-                <th className="px-4 py-2 text-left">RESULT</th>
-                <th className="px-4 py-2 text-left">ECTS</th>
-                <th className="px-4 py-2 text-left">REMARK</th>
               </tr>
             </thead>
             <tbody>
               <tr className="border-t">
                 <td className="px-4 py-2">29V1C</td>
-                <td className="px-4 py-2">Orientation on ICT</td>
-                <td className="px-4 py-2">U</td>
-                <td className="px-4 py-2">27/01/2025</td>
-                <td className="px-4 py-2">U</td>
-                <td className="px-4 py-2"></td>
-                <td className="px-4 py-2"></td>
+                <td className="px-4 py-2">Operating systems II</td>
+                <td className="px-4 py-2">I</td>
+                <td className="px-4 py-2">09/02/2025</td>
+              
+               
+
               </tr>
               <tr className="border-t">
-                <td className="px-4 py-2"></td>
-                <td className="px-4 py-2"></td>
-                <td className="px-4 py-2">U</td>
-                <td className="px-4 py-2">03/07/2023</td>
-                <td className="px-4 py-2"></td>
-                <td className="px-4 py-2"></td>
-                <td className="px-4 py-2"></td>
+                <td className="px-4 py-2">29V1C</td>
+                <td className="px-4 py-2">Pentesting</td>
+                <td className="px-4 py-2">O</td>
+                <td className="px-4 py-2">09/02/2025</td>
+                
               </tr>
               <tr className="border-t">
-                <td className="px-4 py-2"></td>
-                <td className="px-4 py-2"></td>
-                <td className="px-4 py-2">U</td>
-                <td className="px-4 py-2">30/01/2023</td>
-                <td className="px-4 py-2"></td>
-                <td className="px-4 py-2"></td>
-                <td className="px-4 py-2"></td>
+                <td className="px-4 py-2">29V1C</td>
+                <td className="px-4 py-2">Network Security</td>
+                <td className="px-4 py-2">S</td>
+                <td className="px-4 py-2">09/02/2025</td>
+                
               </tr>
               <tr className="border-t">
-                <td className="px-4 py-2">29NEGADV</td>
-                <td className="px-4 py-2">Negative study advice</td>
-                <td className="px-4 py-2">F</td>
-                <td className="px-4 py-2">31/01/2025</td>
-                <td className="px-4 py-2">F</td>
-                <td className="px-4 py-2"></td>
-                <td className="px-4 py-2"></td>
+                <td className="px-4 py-2">29V1C</td>
+                <td className="px-4 py-2">Computer Networks</td>
+                <td className="px-4 py-2">S</td>
+                <td className="px-4 py-2">09/02/2025</td>
+                
+              </tr>
+              <tr className="border-t">
+                <td className="px-4 py-2">29V1C</td>
+                <td className="px-4 py-2">Group Project</td>
+                <td className="px-4 py-2">U</td>
+                <td className="px-4 py-2">09/02/2025</td>
+                
               </tr>
             </tbody>
           </table>
         </div>
 
         <div className="p-4 border-t flex justify-between items-center">
-          <div>Achieved work load 0 ECTS</div>
-          <button className="flex items-center gap-2 px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">
-            <Printer className="w-4 h-4" />
-            print
-          </button>
+          
         </div>
       </div>
     </div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { store } from './store/store';
@@ -10,14 +9,15 @@ import General from './pages/info/General';
 import AddressData from './pages/info/AddressData';
 import Configurations from './pages/info/Configurations';
 import ResultsList from './pages/results/ResultsList';
-import ResultDetails from './pages/results/ResultDetails';
 import ResultsOverview from './pages/results/ResultsOverview';
 import Enrollment from './pages/Enrollment/Enrollment';
+import Footer from './components/footer';
 
 function App() {
   return (
     <Provider store={store}>
       <Router>
+       
         <div className="flex min-h-screen bg-gray-100">
           <Sidebar />
           <div className="flex-1">
@@ -33,12 +33,12 @@ function App() {
                 <Route path="/results" element={<ResultsList />} />
                 <Route path="/enrolling" element={<Enrollment />} />
                 <Route path="/results/:programId" element={<ResultsOverview />} />
-                <Route path="/results/:programId/:courseId" element={<ResultDetails />} />
                 
               </Routes>
             </main>
           </div>
         </div>
+          <Footer/>
       </Router>
     </Provider>
   );
