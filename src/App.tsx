@@ -17,6 +17,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
+        
        
         <div className="flex min-h-screen bg-gray-100">
           <Sidebar />
