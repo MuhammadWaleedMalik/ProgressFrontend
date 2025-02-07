@@ -1,19 +1,26 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Home, User, BarChart2, BookOpen, Mail, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { RootState } from '../store/store';
 import { setCurrentPath } from '../store/slices/navigationSlice';
+import { FaChartSimple } from "react-icons/fa6";
+
+import { IoMdHome } from "react-icons/io";
+import { IoPerson } from "react-icons/io5";
+import { HiOutlineChartSquareBar } from "react-icons/hi";
+import { BsFillPersonBadgeFill } from "react-icons/bs";
 
 const Sidebar: React.FC = () => {
   const currentPath = useSelector((state: RootState) => state.navigation.currentPath);
+  const isSidebarOpen = useSelector((state: RootState) => state.ui.isSidebarOpen);
   const dispatch = useDispatch();
 
   const menuItems = [
-    { path: '/dashboard', icon: Home, label: 'Dashboard' },
+    { path: '/dashboard', icon: <IoMdHome  size='1.5rem' />, label: 'Dashboard' },
     {
       path: '/info',
-      icon: User,
+      icon: <IoPerson size='1.5rem' />,
       label: 'Info',
       subItems: [
         { path: '/info/general', label: 'General' },
@@ -21,44 +28,43 @@ const Sidebar: React.FC = () => {
         { path: '/info/configurations', label: 'Configurations' },
       ],
     },
-    { path: '/results', icon: BarChart2, label: 'Results' },
-    { path: '/enrolling', icon: BookOpen, label: 'Enrolling' },
-    { path: '/messages', icon: Mail, label: 'Messages' },
+    { path: '/results', icon: <HiOutlineChartSquareBar size='1.5rem' />, label: 'Results' },
+    { path: '/enrolling', icon: <BsFillPersonBadgeFill size='1.5rem' />, label: 'Enrolling' },
   ];
 
   return (
-    <div className="w-64 bg-[#1C3B40] text-white min-h-screen ">
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold bg-[#00A1C9] w-96 h-[11.2vh] p-4 ">Progress</h1>
+    <div className={`bg-[#1D3A43] text-white min-h-screen transition-all duration-300 ease-in-out
+      ${isSidebarOpen ? 'w-64' : 'w-20'} overflow-hidden`}>
+
+      <div className="mb-8 flex items-center gap-2 p-4">
+        <FaChartSimple size={24} />
+        {isSidebarOpen && <h1 className="text-2xl font-bold">Progress</h1>}
       </div>
-      
+
       <nav>
         {menuItems.map((item) => (
           <div key={item.path}>
             <Link
               to={item.path}
-              className={`flex items-center p-3 mb-2 rounded-lg transition-colors ${
-                currentPath.startsWith(item.path)
-                  ? 'bg-[#2A5459] text-white'
-                  : 'text-gray-300 hover:bg-[#2A5459]'
-              }`}
+              className={`flex items-center p-3 mb-2 rounded-lg transition-colors
+                ${currentPath.startsWith(item.path) ? 'bg-[#29444D] text-white' : 'text-gray-300 hover:bg-[#29444D]'}
+              `}
               onClick={() => dispatch(setCurrentPath(item.path))}
             >
-              <item.icon className="w-5 h-5 mr-3" />
-              {item.label}
-              {item.subItems && <ChevronRight className="w-4 h-4 ml-auto" />}
+              {item.icon} {/* Render the icon directly */}
+              {isSidebarOpen && <span className="ml-3">{item.label}</span>}
+              {item.subItems && isSidebarOpen && <ChevronRight className="w-4 h-4 ml-auto" />}
             </Link>
-            {item.subItems && currentPath.startsWith(item.path) && (
+            
+            {item.subItems && currentPath.startsWith(item.path) && isSidebarOpen && (
               <div className="ml-4">
                 {item.subItems.map((subItem) => (
                   <Link
                     key={subItem.path}
                     to={subItem.path}
-                    className={`flex items-center p-2 mb-1 rounded-lg transition-colors ${
-                      currentPath === subItem.path
-                        ? 'bg-[#2A5459] text-white'
-                        : 'text-gray-300 hover:bg-[#2A5459]'
-                    }`}
+                    className={`flex items-center p-2 mb-1 rounded-lg transition-colors
+                      ${currentPath === subItem.path ? 'bg-[#29444D] text-white' : 'text-gray-300 hover:bg-[#29444D]'}
+                    `}
                     onClick={() => dispatch(setCurrentPath(subItem.path))}
                   >
                     {subItem.label}

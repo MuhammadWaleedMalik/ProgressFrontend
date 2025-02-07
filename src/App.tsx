@@ -12,7 +12,7 @@ import Configurations from './pages/info/Configurations';
 import ResultsList from './pages/results/ResultsList';
 import ResultDetails from './pages/results/ResultDetails';
 import ResultsOverview from './pages/results/ResultsOverview';
-
+import Enrollment from './pages/Enrollment/Enrollment';
 
 function App() {
   return (
@@ -31,6 +31,7 @@ function App() {
                 <Route path="/info/address-data" element={<AddressData />} />
                 <Route path="/info/configurations" element={<Configurations />} />
                 <Route path="/results" element={<ResultsList />} />
+                <Route path="/enrolling" element={<Enrollment />} />
                 <Route path="/results/:programId" element={<ResultsOverview />} />
                 <Route path="/results/:programId/:courseId" element={<ResultDetails />} />
                 
