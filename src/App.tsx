@@ -11,7 +11,7 @@ import Configurations from './pages/info/Configurations';
 import ResultsList from './pages/results/ResultsList';
 import ResultsOverview from './pages/results/ResultsOverview';
 import Enrollment from './pages/Enrollment/Enrollment';
-import Footer from './components/footer';
+import Footer from './components/Footer';
 
 function App() {
   return (
